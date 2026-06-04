@@ -1,117 +1,2364 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moda360 - E-Ticaret</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="SHOPLY — Modern online alisveris deneyimi. Yeni sezon urunleri, kampanyalar ve hizli kargo." />
+<title>SHOPLY — Yeni Sezon, Yeni Sen.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--bg:#0f0520;--card:#1a0d35;--accent:#ec4899;--purple:#a855f7;--text:#f1f5f9;--muted:#94a3b8;}
-body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);}
-nav{position:fixed;top:0;width:100%;background:rgba(15,5,32,0.97);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:1px solid rgba(236,72,153,0.2);}
-.logo{font-size:1.5rem;font-weight:900;background:linear-gradient(90deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.nav-links a{color:var(--text);text-decoration:none;margin-left:2rem;font-size:0.9rem;}
-.nav-links a:hover{color:var(--accent);}
-.btn-pink{background:linear-gradient(90deg,var(--accent),var(--purple));color:white;padding:0.7rem 1.8rem;border:none;border-radius:2rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;}
-.btn-pink:hover{opacity:0.85;}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5% 4rem;gap:4rem;}
-.hero-badge{display:inline-block;background:rgba(236,72,153,0.15);border:1px solid rgba(236,72,153,0.4);color:var(--accent);padding:0.4rem 1rem;border-radius:2rem;font-size:0.85rem;margin-bottom:1.5rem;}
-.hero h1{font-size:3rem;font-weight:900;line-height:1.15;margin-bottom:1.5rem;}
-.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero p{color:var(--muted);font-size:1.05rem;line-height:1.8;margin-bottom:2rem;}
-.hero-imgs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.hero-img-main{width:100%;height:320px;object-fit:cover;border-radius:1rem;grid-column:span 2;}
-.hero-img-sm{width:100%;height:160px;object-fit:cover;border-radius:0.8rem;}
-.cats-strip{padding:2.5rem 5%;background:var(--card);display:flex;gap:1.5rem;overflow-x:auto;}
-.cat-pill{flex-shrink:0;display:flex;align-items:center;gap:0.8rem;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.2);border-radius:2rem;padding:0.6rem 1.2rem;cursor:pointer;transition:all 0.3s;text-decoration:none;color:var(--text);}
-.cat-pill:hover{background:rgba(236,72,153,0.2);border-color:var(--accent);}
-.cat-pill img{width:36px;height:36px;border-radius:50%;object-fit:cover;}
-.section{padding:5rem 5%;}
-.section-tag{color:var(--accent);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:0.8rem;}
-.section-title{font-size:2.2rem;font-weight:900;margin-bottom:2rem;}
-.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
-.product-card{background:var(--card);border-radius:1rem;overflow:hidden;border:1px solid rgba(236,72,153,0.1);transition:all 0.3s;}
-.product-card:hover{transform:translateY(-5px);border-color:rgba(236,72,153,0.4);}
-.product-img-wrap{position:relative;}
-.product-img{width:100%;height:200px;object-fit:cover;}
-.product-badge{position:absolute;top:0.8rem;left:0.8rem;background:linear-gradient(90deg,var(--accent),var(--purple));color:white;padding:0.2rem 0.7rem;border-radius:1rem;font-size:0.7rem;font-weight:700;}
-.product-body{padding:1rem;}
-.product-brand{color:var(--muted);font-size:0.75rem;margin-bottom:0.3rem;}
-.product-name{font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;}
-.product-price{color:var(--accent);font-weight:800;font-size:1.1rem;}
-.product-old{color:var(--muted);text-decoration:line-through;font-size:0.8rem;margin-left:0.4rem;}
-.add-btn{width:100%;background:rgba(236,72,153,0.15);color:var(--accent);border:1px solid rgba(236,72,153,0.3);padding:0.6rem;border-radius:0.5rem;font-weight:600;cursor:pointer;margin-top:0.8rem;font-size:0.85rem;transition:all 0.3s;}
-.add-btn:hover{background:var(--accent);color:white;}
-.banner-section{padding:3rem 5%;}
-.banner{background:linear-gradient(135deg,rgba(236,72,153,0.15),rgba(168,85,247,0.15));border:1px solid rgba(236,72,153,0.3);border-radius:1.5rem;padding:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
-.banner h2{font-size:2rem;font-weight:900;}
-.banner h2 span{color:var(--accent);}
-.banner p{color:var(--muted);margin:1rem 0;}
-.banner-img{width:100%;height:280px;object-fit:cover;border-radius:1rem;}
-footer{background:#080114;padding:3rem 5%;text-align:center;color:var(--muted);}
-.footer-logo{font-size:1.8rem;font-weight:900;background:linear-gradient(90deg,var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.8rem;}
-@media(max-width:768px){.hero{grid-template-columns:1fr;}.products-grid{grid-template-columns:repeat(2,1fr);}.banner{grid-template-columns:1fr;}.nav-links{display:none;}}
+  /* ============== RESET & BASE ============== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    --bg: #fafafa;
+    --bg-alt: #ffffff;
+    --text: #18181b;
+    --text-soft: #52525b;
+    --text-mute: #a1a1aa;
+    --border: #e4e4e7;
+    --border-soft: #f4f4f5;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --orange: #f97316;
+    --teal: #14b8a6;
+    --gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
+    --gradient-orange: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+    --shadow-sm: 0 2px 8px rgba(24,24,27,0.04);
+    --shadow-md: 0 8px 24px rgba(24,24,27,0.06);
+    --shadow-lg: 0 20px 50px rgba(24,24,27,0.10);
+    --shadow-color: 0 20px 50px rgba(139,92,246,0.25);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 32px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  input { font-family: inherit; }
+  ::selection { background: var(--purple); color: #fff; }
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============== ANNOUNCEMENT BAR ============== */
+  .announce {
+    background: var(--gradient);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .announce strong { font-weight: 700; }
+  .announce .dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+
+  /* ============== NAVIGATION ============== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(250, 250, 250, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition);
+  }
+  .nav.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-color: var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .logo .plus {
+    color: var(--pink);
+    font-size: 28px;
+    line-height: 1;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-soft);
+    position: relative;
+    padding: 6px 0;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: width var(--transition);
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-box input {
+    width: 0;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: var(--text);
+    transition: width var(--transition), padding var(--transition);
+    outline: none;
+  }
+  .search-box.open input {
+    width: 220px;
+    padding: 10px 16px 10px 40px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 99px;
+  }
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--text);
+    transition: all var(--transition);
+    position: relative;
+  }
+  .icon-btn:hover {
+    background: var(--border-soft);
+    color: var(--purple);
+  }
+  .icon-btn svg { width: 20px; height: 20px; }
+  .cart-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 99px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    border: 2px solid var(--bg);
+  }
+  .nav.scrolled .cart-count { border-color: #fff; }
+  .menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    position: relative;
+    transition: all var(--transition);
+  }
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    transition: all var(--transition);
+  }
+  .menu-toggle span::before { top: -6px; }
+  .menu-toggle span::after { top: 6px; }
+  .menu-toggle.active span { background: transparent; }
+  .menu-toggle.active span::before { top: 0; transform: rotate(45deg); }
+  .menu-toggle.active span::after { top: 0; transform: rotate(-45deg); }
+
+  /* ============== HERO ============== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 0 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(250,250,250,0.96) 0%, rgba(250,250,250,0.75) 45%, rgba(250,250,250,0.15) 100%);
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-soft);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .hero-eyebrow .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    position: relative;
+  }
+  .hero-eyebrow .pulse::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 78px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -2px;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  .hero h1 .grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    color: var(--text-soft);
+    max-width: 480px;
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 99px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--gradient);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(139,92,246,0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(236,72,153,0.4);
+  }
+  .btn-primary svg { transition: transform var(--transition); }
+  .btn-primary:hover svg { transform: translateX(4px); }
+  .btn-ghost {
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: var(--text);
+    background: var(--text);
+    color: #fff;
+  }
+  .btn svg { width: 18px; height: 18px; }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+  .stat-num .grad { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-mute);
+    font-weight: 500;
+  }
+  .hero-card-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .hero-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-lg);
+    transform: rotate(-2deg);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .hero-card:hover { transform: rotate(0deg) scale(1.02); }
+  .hero-card-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--gradient-soft);
+    margin-bottom: 18px;
+  }
+  .hero-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-card-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #fff;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 99px;
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.5px;
+  }
+  .hero-card-badge.new { background: var(--gradient); color: #fff; }
+  .hero-card-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  .hero-card-cat {
+    font-size: 12px;
+    color: var(--text-mute);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+  }
+  .hero-card-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .hero-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price-old {
+    text-decoration: line-through;
+    color: var(--text-mute);
+    font-size: 13px;
+    display: block;
+  }
+  .price-new {
+    font-size: 22px;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+  .add-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--text);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+  }
+  .add-btn:hover { background: var(--gradient); transform: scale(1.1) rotate(90deg); }
+  .add-btn svg { width: 18px; height: 18px; }
+
+  .float-tag {
+    position: absolute;
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .float-tag.t1 { top: 20%; left: -10px; animation: float 5s ease-in-out infinite; }
+  .float-tag.t2 { bottom: 15%; right: -10px; animation: float 6s ease-in-out infinite reverse; }
+  .float-tag .ico {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--gradient);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .float-tag .ico svg { width: 16px; height: 16px; }
+  .float-tag.t2 .ico { background: var(--gradient-orange); }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-soft);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+  }
+  .scroll-cue .line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--text-soft), transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .scroll-cue .line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--gradient);
+    animation: scrollLine 1.8s infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+
+  /* ============== SECTIONS ============== */
+  section { padding: 100px 0; position: relative; }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .section-head.center { justify-content: center; text-align: center; flex-direction: column; align-items: center; }
+  .section-eyebrow {
+    display: inline-block;
+    color: var(--purple);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    color: var(--text);
+    max-width: 700px;
+  }
+  .section-title .grad { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .section-sub {
+    color: var(--text-soft);
+    font-size: 16px;
+    margin-top: 14px;
+    max-width: 540px;
+  }
+  .section-head.center .section-sub { text-align: center; }
+  .view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    background: #fff;
+    transition: all var(--transition);
+  }
+  .view-all:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .view-all svg { width: 14px; height: 14px; transition: transform var(--transition); }
+  .view-all:hover svg { transform: translateX(3px); }
+
+  /* ============== CATEGORIES ============== */
+  .categories { background: #fff; }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+  .cat-card {
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition);
+  }
+  .cat-card:hover { transform: translateY(-6px); }
+  .cat-circle {
+    position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--gradient-soft);
+    margin-bottom: 16px;
+    border: 3px solid transparent;
+    transition: all var(--transition);
+  }
+  .cat-card:hover .cat-circle { border-color: var(--purple); }
+  .cat-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .cat-card:hover .cat-circle img { transform: scale(1.1); }
+  .cat-circle::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(139,92,246,0.3));
+  }
+  .cat-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .cat-count {
+    font-size: 12px;
+    color: var(--text-mute);
+    font-weight: 500;
+  }
+
+  /* ============== PRODUCT GRID ============== */
+  .products { background: var(--bg); }
+  .filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 10px 20px;
+    border-radius: 99px;
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all var(--transition);
+  }
+  .filter-btn:hover { color: var(--text); border-color: var(--text); }
+  .filter-btn.active {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(139,92,246,0.25);
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .product-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    transition: all var(--transition);
+    border: 1px solid var(--border-soft);
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+  .product-img {
+    position: relative;
+    aspect-ratio: 1/1;
+    background: var(--gradient-soft);
+    overflow: hidden;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .product-card:hover .product-img img { transform: scale(1.1); }
+  .product-badges {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .p-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+  .p-badge.new { background: var(--gradient); color: #fff; }
+  .p-badge.sale { background: var(--orange); color: #fff; }
+  .p-badge.hot { background: var(--text); color: #fff; }
+  .wishlist-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+    z-index: 2;
+  }
+  .wishlist-btn:hover { color: var(--pink); transform: scale(1.1); }
+  .wishlist-btn.active { color: var(--pink); background: #fff; }
+  .wishlist-btn.active svg { fill: var(--pink); }
+  .wishlist-btn svg { width: 16px; height: 16px; }
+  .quick-add {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--text);
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transform: translateY(100%);
+    transition: transform var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .product-card:hover .quick-add { transform: translateY(0); }
+  .quick-add:hover { background: var(--gradient); }
+  .quick-add svg { width: 16px; height: 16px; }
+  .product-info { padding: 20px; }
+  .product-cat {
+    font-size: 11px;
+    color: var(--text-mute);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+  }
+  .product-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-bottom: 12px;
+  }
+  .star { color: var(--orange); font-size: 13px; }
+  .product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .p-new {
+    font-size: 19px;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .p-old {
+    text-decoration: line-through;
+    color: var(--text-mute);
+    font-size: 13px;
+  }
+
+  /* ============== CAMPAIGN BANNER ============== */
+  .campaign {
+    padding: 0;
+  }
+  .campaign-inner {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 24px;
+  }
+  .campaign-card {
+    background: var(--gradient);
+    border-radius: var(--radius-xl);
+    padding: 80px 60px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .campaign-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .campaign-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(249,115,22,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .campaign-content { position: relative; z-index: 1; }
+  .campaign-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 18px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .campaign-title {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+  .campaign-title span { color: var(--orange); }
+  .campaign-sub {
+    font-size: 17px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    max-width: 460px;
+  }
+  .campaign-btn {
+    background: #fff;
+    color: var(--purple);
+    padding: 18px 32px;
+    border-radius: 99px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all var(--transition);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .campaign-btn:hover {
+    background: var(--text);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .campaign-btn svg { transition: transform var(--transition); }
+  .campaign-btn:hover svg { transform: translateX(4px); }
+  .countdown {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .count-box {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: var(--radius-md);
+    padding: 24px 12px;
+    text-align: center;
+    transition: all var(--transition);
+  }
+  .count-box:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-4px);
+  }
+  .count-num {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+    display: block;
+    margin-bottom: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .count-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* ============== TREND CAROUSEL ============== */
+  .trend { background: #fff; }
+  .carousel-wrap {
+    position: relative;
+  }
+  .carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0 30px;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar { display: none; }
+  .carousel .product-card {
+    flex: 0 0 calc(25% - 18px);
+    min-width: 260px;
+    scroll-snap-align: start;
+  }
+  .carousel-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  .carousel-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+  }
+  .carousel-btn:hover {
+    background: var(--text);
+    color: #fff;
+    border-color: var(--text);
+  }
+  .carousel-btn svg { width: 18px; height: 18px; }
+
+  /* ============== BRANDS ============== */
+  .brands { background: var(--bg); padding: 60px 0; }
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+  }
+  .brand-box {
+    aspect-ratio: 16/9;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--text-soft);
+    letter-spacing: 0.5px;
+    transition: all var(--transition);
+    cursor: pointer;
+  }
+  .brand-box:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  .brand-box .dot-grad {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gradient);
+    margin-right: 6px;
+  }
+
+  /* ============== FEATURES ============== */
+  .features {
+    background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .feature-card {
+    background: #fff;
+    padding: 36px 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: var(--gradient-soft);
+    color: var(--purple);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: all var(--transition);
+  }
+  .feature-card:hover .feature-icon {
+    background: var(--gradient);
+    color: #fff;
+    transform: rotate(-8deg) scale(1.05);
+  }
+  .feature-icon svg { width: 30px; height: 30px; }
+  .feature-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .feature-desc {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* ============== TESTIMONIALS ============== */
+  .testimonials {
+    background: var(--text);
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139,92,246,0.4) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .testimonials::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236,72,153,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .testimonials .section-eyebrow { color: var(--pink); }
+  .testimonials .section-title { color: #fff; }
+  .testimonials .section-title .grad { background: var(--gradient-orange); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .testimonials .section-sub { color: rgba(255,255,255,0.7); }
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .test-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    transition: all var(--transition);
+  }
+  .test-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-6px);
+    border-color: rgba(236,72,153,0.4);
+  }
+  .test-quote {
+    font-size: 56px;
+    line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    margin-bottom: 8px;
+    font-family: Georgia, serif;
+  }
+  .test-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+  }
+  .test-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .test-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .test-info { flex: 1; }
+  .test-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+  }
+  .test-role {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+  .test-stars {
+    color: var(--orange);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+
+  /* ============== NEWSLETTER ============== */
+  .newsletter { background: var(--bg); padding: 80px 0; }
+  .newsletter-card {
+    background: var(--gradient-soft);
+    border-radius: var(--radius-xl);
+    padding: 70px 50px;
+    text-align: center;
+    border: 1px solid rgba(139,92,246,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter-card::before,
+  .newsletter-card::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--gradient);
+    opacity: 0.1;
+  }
+  .newsletter-card::before { top: -80px; right: -80px; }
+  .newsletter-card::after { bottom: -80px; left: -80px; background: var(--gradient-orange); }
+  .newsletter-content { position: relative; z-index: 1; }
+  .newsletter h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .newsletter h2 .grad { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .newsletter p { color: var(--text-soft); margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .news-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 99px;
+    padding: 6px;
+    box-shadow: var(--shadow-md);
+  }
+  .news-form input {
+    flex: 1;
+    border: none;
+    padding: 14px 22px;
+    font-size: 15px;
+    background: transparent;
+    color: var(--text);
+    outline: none;
+  }
+  .news-form button {
+    background: var(--gradient);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+  .news-form button:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(236,72,153,0.4); }
+
+  /* ============== FOOTER ============== */
+  footer {
+    background: var(--text);
+    color: #fff;
+    padding: 80px 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+  .footer-col h4 {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+    color: #fff;
+  }
+  .footer-brand .logo { color: #fff; margin-bottom: 18px; }
+  .footer-brand p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+  .socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+  }
+  .social-btn:hover { background: var(--gradient); transform: translateY(-3px); }
+  .social-btn svg { width: 16px; height: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    transition: all var(--transition);
+    display: inline-block;
+  }
+  .footer-col a:hover {
+    color: #fff;
+    transform: translateX(4px);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .copy {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+  .pay-methods {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pay-icon {
+    background: #fff;
+    border-radius: 6px;
+    padding: 6px 10px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition);
+  }
+  .pay-icon:hover { transform: translateY(-2px); }
+  .pay-icon svg { height: 14px; width: auto; }
+
+  /* ============== TOAST ============== */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--text);
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 99px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 200;
+    transform: translateY(120px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast .check {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
+  .toast .check svg { width: 14px; height: 14px; }
+
+  /* ============== FLYING ITEM ============== */
+  .fly-item {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 300;
+    pointer-events: none;
+    transition: all 0.9s cubic-bezier(0.5, 0, 0.5, 1);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .fly-item img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ============== REVEAL ANIMATIONS ============== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
+  .reveal-stagger.in > *:nth-child(2) { transition-delay: 0.1s; }
+  .reveal-stagger.in > *:nth-child(3) { transition-delay: 0.15s; }
+  .reveal-stagger.in > *:nth-child(4) { transition-delay: 0.2s; }
+  .reveal-stagger.in > *:nth-child(5) { transition-delay: 0.25s; }
+  .reveal-stagger.in > *:nth-child(6) { transition-delay: 0.3s; }
+  .reveal-stagger.in > *:nth-child(7) { transition-delay: 0.35s; }
+  .reveal-stagger.in > *:nth-child(8) { transition-delay: 0.4s; }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+    .hero-card-wrap { order: 2; }
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .carousel .product-card { flex: 0 0 calc(33.333% - 16px); }
+    .cat-grid { grid-template-columns: repeat(3, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .test-grid { grid-template-columns: 1fr; }
+    .brands-grid { grid-template-columns: repeat(4, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .campaign-card { grid-template-columns: 1fr; padding: 60px 40px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: #fff;
+      flex-direction: column;
+      padding: 100px 30px 30px;
+      gap: 24px;
+      box-shadow: -20px 0 50px rgba(0,0,0,0.1);
+      transition: right var(--transition);
+    }
+    .nav-links.open { right: 0; }
+    .menu-toggle { display: inline-flex; }
+    .hero { padding: 100px 0 40px; }
+    .hero h1 { letter-spacing: -1px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .carousel .product-card { flex: 0 0 calc(50% - 12px); min-width: 220px; }
+    .cat-grid { grid-template-columns: repeat(3, 1fr); }
+    .countdown { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .count-box { padding: 18px 6px; }
+    .section-head { flex-direction: column; align-items: flex-start; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .news-form { flex-direction: column; border-radius: var(--radius-md); padding: 8px; }
+    .news-form input { padding: 12px 18px; }
+    .news-form button { width: 100%; padding: 14px; }
+    .float-tag { display: none; }
+  }
+  @media (max-width: 480px) {
+    .container { padding: 0 18px; }
+    .hero-stats { gap: 20px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .carousel .product-card { flex: 0 0 85%; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: 1fr; }
+    .brands-grid { grid-template-columns: repeat(2, 1fr); }
+    .campaign-card { padding: 40px 24px; }
+    .campaign-inner { padding: 0 18px; }
+    .count-num { font-size: 28px; }
+  }
 </style>
 </head>
 <body>
-<nav>
-  <div class="logo">MODA360</div>
-  <div class="nav-links">
-    <a href="#">Ana Sayfa</a><a href="#">Kadın</a><a href="#">Erkek</a><a href="#">Kampanyalar</a><a href="#">İletişim</a>
-  </div>
-  <a href="#" class="btn-pink">Alışverişe Başla</a>
-</nav>
 
-<section class="hero">
-  <div>
-    <div class="hero-badge">Yeni Sezon — Yaz 2025</div>
-    <h1>Tarzını <span>Keşfet</span> Modayı Yaşa</h1>
-    <p>Moda360'ta binlerce ürün, özel koleksiyonlar ve kampanyalarla her mevsim tarzınla öne çık.</p>
-    <a href="#" class="btn-pink">Koleksiyonu İncele</a>
-  </div>
-  <div class="hero-imgs">
-    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80" alt="Moda" class="hero-img-main">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Ayakkabı" class="hero-img-sm">
-    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" alt="Çanta" class="hero-img-sm">
-  </div>
-</section>
-
-<div class="cats-strip">
-  <a href="#" class="cat-pill"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=100&q=80" alt="Elbise">Elbiseler</a>
-  <a href="#" class="cat-pill"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=100&q=80" alt="Spor">Spor Giyim</a>
-  <a href="#" class="cat-pill"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=100&q=80" alt="Çanta">Çantalar</a>
-  <a href="#" class="cat-pill"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&q=80" alt="Aksesuar">Aksesuarlar</a>
-  <a href="#" class="cat-pill"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=100&q=80" alt="Parfüm">Parfüm</a>
-  <a href="#" class="cat-pill"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=100&q=80" alt="Ayakkabı">Ayakkabılar</a>
+<!-- Announcement Bar -->
+<div class="announce">
+  <strong>Ucretsiz Kargo</strong> 750 TL ve uzeri alisverislerinizde <span class="dot"></span>
+  <strong>14 Gun</strong> icinde ucretsiz iade <span class="dot"></span>
+  Kod: <strong>SHOPLY25</strong> ile ekstra %10 indirim
 </div>
 
-<section class="section">
-  <div class="section-tag">Çok Satanlar</div>
-  <div class="section-title">Bu Hafta Trendler</div>
-  <div class="products-grid">
-    <div class="product-card"><div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=80" alt="Elbise" class="product-img"><span class="product-badge">YENİ</span></div><div class="product-body"><div class="product-brand">ZARA</div><div class="product-name">Midi Yazlık Elbise</div><div><span class="product-price">1.299 TL</span></div><button class="add-btn">Sepete Ekle</button></div></div>
-    <div class="product-card"><div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Sneaker" class="product-img"><span class="product-badge">FIRSAT</span></div><div class="product-body"><div class="product-brand">NIKE</div><div class="product-name">Air Max 270 React</div><div><span class="product-price">2.499 TL</span><span class="product-old">3.299 TL</span></div><button class="add-btn">Sepete Ekle</button></div></div>
-    <div class="product-card"><div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" alt="Çanta" class="product-img"></div><div class="product-body"><div class="product-brand">MANGO</div><div class="product-name">Mini Crossbody Çanta</div><div><span class="product-price">899 TL</span></div><button class="add-btn">Sepete Ekle</button></div></div>
-    <div class="product-card"><div class="product-img-wrap"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80" alt="Saat" class="product-img"><span class="product-badge">İNDİRİM</span></div><div class="product-body"><div class="product-brand">FOSSIL</div><div class="product-name">Minimalist Kol Saati</div><div><span class="product-price">1.799 TL</span><span class="product-old">2.499 TL</span></div><button class="add-btn">Sepete Ekle</button></div></div>
-  </div>
-</section>
-
-<section class="banner-section">
-  <div class="banner">
-    <div>
-      <h2>Yaz Sezonu <span>%50 İndirim</span></h2>
-      <p>Seçili ürünlerde büyük indirim! Sadece bu hafta sonu geçerli.</p>
-      <a href="#" class="btn-pink">Hemen Al</a>
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">SHOPLY<span class="plus">+</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#yeni-gelenler">Yeni Gelenler</a></li>
+      <li><a href="#kategoriler">Kategoriler</a></li>
+      <li><a href="#kampanya">Kampanyalar</a></li>
+      <li><a href="#trend">Trend</a></li>
+      <li><a href="#markalar">Markalar</a></li>
+      <li><a href="#iletisim">Iletisim</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="search-box" id="searchBox">
+        <button class="icon-btn" id="searchToggle" aria-label="Arama">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        </button>
+        <input type="text" placeholder="Urun ara..." id="searchInput" />
+      </div>
+      <button class="icon-btn" aria-label="Favoriler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+      </button>
+      <button class="icon-btn" aria-label="Sepet" id="cartBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span></button>
     </div>
-    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=700&q=80" alt="Kampanya" class="banner-img">
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&q=85" alt="Yeni sezon urun koleksiyonu" />
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="pulse"></span>
+          2026 Ilkbahar / Yaz Koleksiyonu
+        </div>
+        <h1>Yeni Sezon,<br/><span class="grad">Yeni Sen.</span></h1>
+        <p class="lead">Secili urunlerde yuzde 50'ye varan indirim. Modern, rahat ve enerjik parcalarla stilinizi yenileyin. SHOPLY her zaman en iyiyi sunar.</p>
+        <div class="hero-buttons">
+          <a href="#yeni-gelenler" class="btn btn-primary">
+            Alisverise Basla
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          <a href="#kampanya" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            Kampanyalari Gor
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num"><span class="grad">12K+</span></div>
+            <div class="stat-label">Mutlu Musteri</div>
+          </div>
+          <div>
+            <div class="stat-num"><span class="grad">850+</span></div>
+            <div class="stat-label">Marka Urunu</div>
+          </div>
+          <div>
+            <div class="stat-num"><span class="grad">24s</span></div>
+            <div class="stat-label">Hizli Teslimat</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card-wrap">
+        <div class="float-tag t1">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+          <span>Stokta Mevcut</span>
+        </div>
+        <div class="float-tag t2">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16h6v6h-6zM2 16h6v6H2zM9 2h6v6H9z"></path></svg></span>
+          <span>4.9 / 5.0 Puan</span>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-img">
+            <span class="hero-card-badge new">YENI</span>
+            <span class="hero-card-tag">-30%</span>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=85" alt="One cikan urun" />
+          </div>
+          <div class="hero-card-cat">Aksesuar</div>
+          <div class="hero-card-name">Minimal Deri Saat</div>
+          <div class="hero-card-bottom">
+            <div>
+              <span class="price-old">2.499 TL</span>
+              <span class="price-new">1.749 TL</span>
+            </div>
+            <button class="add-btn" aria-label="Sepete ekle" data-add="Minimal Deri Saat" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=120&q=85">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Kesfet</span>
+    <div class="line"></div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-logo">MODA360</div>
-  <p>Tarzın sınır tanımaz.</p>
-  <p style="margin-top:0.8rem;">destek@moda360.com.tr | +90 850 360 0 360</p>
-  <p style="margin-top:1rem;font-size:0.8rem;">© 2025 Moda360 E-Ticaret. Tüm hakları saklıdır.</p>
+<!-- Categories -->
+<section class="categories" id="kategoriler">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div>
+        <div class="section-eyebrow">Koleksiyonlar</div>
+        <h2 class="section-title">Kategorilere <span class="grad">Goz At</span></h2>
+        <p class="section-sub">Aradiginiz her sey tek bir yerde. En popular kategorilerimizi kesfedin.</p>
+      </div>
+    </div>
+    <div class="cat-grid reveal-stagger">
+      <a class="cat-card" href="#">
+        <div class="cat-circle"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=85" alt="Saat" /></div>
+        <div class="cat-name">Saat</div>
+        <div class="cat-count">248 Urun</div>
+      </a>
+      <a class="cat-card" href="#">
+        <div class="cat-circle"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=85" alt="Ayakkabi" /></div>
+        <div class="cat-name">Ayakkabi</div>
+        <div class="cat-count">512 Urun</div>
+      </a>
+      <a class="cat-card" href="#">
+        <div class="cat-circle"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=85" alt="Canta" /></div>
+        <div class="cat-name">Canta</div>
+        <div class="cat-count">186 Urun</div>
+      </a>
+      <a class="cat-card" href="#">
+        <div class="cat-circle"><img src="https://images.unsplash.com/photo-1491557963955-7a2c5fb15e96?w=400&q=85" alt="Gozluk" /></div>
+        <div class="cat-name">Gozluk</div>
+        <div class="cat-count">94 Urun</div>
+      </a>
+      <a class="cat-card" href="#">
+        <div class="cat-circle"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=85" alt="Kulaklik" /></div>
+        <div class="cat-name">Kulaklik</div>
+        <div class="cat-count">132 Urun</div>
+      </a>
+      <a class="cat-card" href="#">
+        <div class="cat-circle"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=85" alt="Tisort" /></div>
+        <div class="cat-name">Tisort</div>
+        <div class="cat-count">328 Urun</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="yeni-gelenler">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-eyebrow">Yeni Koleksiyon</div>
+        <h2 class="section-title">Yeni <span class="grad">Gelenler</span></h2>
+        <p class="section-sub">Bu hafta eklenen en yeni urunleri hemen inceleyin, ilk siz sahip olun.</p>
+      </div>
+      <a href="#" class="view-all">Tumunu Gor
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </a>
+    </div>
+    <div class="filter-bar reveal">
+      <button class="filter-btn active">Tumu</button>
+      <button class="filter-btn">Aksesuar</button>
+      <button class="filter-btn">Ayakkabi</button>
+      <button class="filter-btn">Canta</button>
+      <button class="filter-btn">Teknoloji</button>
+      <button class="filter-btn">Giyim</button>
+    </div>
+    <div class="product-grid reveal-stagger" id="productGrid">
+
+      <article class="product-card" data-cat="aksesuar">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge new">YENI</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=85" alt="Klasik Kol Saati" />
+          <button class="quick-add" data-add="Klasik Kol Saati" data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Aksesuar</div>
+          <h3 class="product-name">Klasik Kol Saati</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.8 <span>(234)</span></div>
+          <div class="product-price"><span class="p-new">1.299 TL</span><span class="p-old">1.799 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="ayakkabi">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge sale">-25%</span>
+            <span class="p-badge hot">COK SATAN</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=85" alt="Sneaker" />
+          <button class="quick-add" data-add="Premium Sneaker" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Ayakkabi</div>
+          <h3 class="product-name">Premium Sneaker</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.9 <span>(512)</span></div>
+          <div class="product-price"><span class="p-new">1.499 TL</span><span class="p-old">1.999 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="canta">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge new">YENI</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=85" alt="Canta" />
+          <button class="quick-add" data-add="Minimal El Canta" data-img="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Canta</div>
+          <h3 class="product-name">Minimal El Canta</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.7 <span>(168)</span></div>
+          <div class="product-price"><span class="p-new">899 TL</span><span class="p-old">1.299 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="teknoloji">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge hot">EN COK</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=85" alt="Kulak Ustu Kulaklik" />
+          <button class="quick-add" data-add="Bluetooth Kulaklik" data-img="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Teknoloji</div>
+          <h3 class="product-name">Bluetooth Kulaklik</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.9 <span>(892)</span></div>
+          <div class="product-price"><span class="p-new">2.199 TL</span><span class="p-old">2.899 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="giyim">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge new">YENI</span>
+            <span class="p-badge sale">-15%</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=85" alt="Oversize Tisort" />
+          <button class="quick-add" data-add="Oversize Tisort" data-img="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Giyim</div>
+          <h3 class="product-name">Oversize Pamuk Tisort</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.6 <span>(421)</span></div>
+          <div class="product-price"><span class="p-new">349 TL</span><span class="p-old">410 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="aksesuar">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge sale">-20%</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1491557963955-7a2c5fb15e96?w=600&q=85" alt="Gunes Gozlugu" />
+          <button class="quick-add" data-add="Polarize Gozluk" data-img="https://images.unsplash.com/photo-1491557963955-7a2c5fb15e96?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Aksesuar</div>
+          <h3 class="product-name">Polarize Gunes Gozlugu</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.8 <span>(305)</span></div>
+          <div class="product-price"><span class="p-new">749 TL</span><span class="p-old">939 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="teknoloji">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge new">YENI</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=85" alt="Akilli Saat" />
+          <button class="quick-add" data-add="Akilli Saat Pro" data-img="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Teknoloji</div>
+          <h3 class="product-name">Akilli Saat Pro</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 4.9 <span>(467)</span></div>
+          <div class="product-price"><span class="p-new">3.499 TL</span><span class="p-old">4.299 TL</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-cat="aksesuar">
+        <div class="product-img">
+          <div class="product-badges">
+            <span class="p-badge hot">LIMITED</span>
+            <span class="p-badge sale">-40%</span>
+          </div>
+          <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=85" alt="Parfum" />
+          <button class="quick-add" data-add="Ni Parfum 100ml" data-img="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=120&q=85">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+            Sepete Ekle
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">Aksesuar</div>
+          <h3 class="product-name">Ni Parfum 100ml</h3>
+          <div class="product-rating"><span class="star">&#9733;</span> 5.0 <span>(128)</span></div>
+          <div class="product-price"><span class="p-new">1.199 TL</span><span class="p-old">1.999 TL</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Campaign Banner -->
+<section class="campaign" id="kampanya">
+  <div class="campaign-inner">
+    <div class="campaign-card reveal">
+      <div class="campaign-content">
+        <div class="campaign-eyebrow">Sinirli Sureli Teklif</div>
+        <h2 class="campaign-title">SEZON SONU<br/>INDIRIMI <span>%50</span></h2>
+        <p class="campaign-sub">En populer urunlerde yuzde elliye varan dev indirim. Firsati kaçirmayin, stoklarla sinirlidir.</p>
+        <a href="#yeni-gelenler" class="campaign-btn">
+          Hemen Alisverise Basla
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+      <div class="countdown" id="countdown">
+        <div class="count-box">
+          <span class="count-num" id="cd-d">00</span>
+          <span class="count-label">Gun</span>
+        </div>
+        <div class="count-box">
+          <span class="count-num" id="cd-h">00</span>
+          <span class="count-label">Saat</span>
+        </div>
+        <div class="count-box">
+          <span class="count-num" id="cd-m">00</span>
+          <span class="count-label">Dakika</span>
+        </div>
+        <div class="count-box">
+          <span class="count-num" id="cd-s">00</span>
+          <span class="count-label">Saniye</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trend Carousel -->
+<section class="trend" id="trend">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-eyebrow">Bu Hafta Trend</div>
+        <h2 class="section-title">En Cok <span class="grad">Tercih Edilenler</span></h2>
+        <p class="section-sub">Musterilerimizin en cok begendigi ve satin aldigi urunleri sizin icin derledik.</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Onceki">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+        </button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Sonraki">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel-wrap reveal">
+      <div class="carousel" id="carousel">
+        <article class="product-card">
+          <div class="product-img">
+            <div class="product-badges"><span class="p-badge new">YENI</span></div>
+            <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=85" alt="Klasik Saat" />
+            <button class="quick-add" data-add="Klasik Kol Saati" data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=120&q=85"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Sepete Ekle</button>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Aksesuar</div>
+            <h3 class="product-name">Minimal Kol Saati</h3>
+            <div class="product-rating"><span class="star">&#9733;</span> 4.8 <span>(234)</span></div>
+            <div class="product-price"><span class="p-new">1.299 TL</span><span class="p-old">1.799 TL</span></div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-img">
+            <div class="product-badges"><span class="p-badge sale">-30%</span></div>
+            <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=85" alt="Canta" />
+            <button class="quick-add" data-add="Minimal El Canta" data-img="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=120&q=85"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Sepete Ekle</button>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Canta</div>
+            <h3 class="product-name">Deri El Canta</h3>
+            <div class="product-rating"><span class="star">&#9733;</span> 4.7 <span>(168)</span></div>
+            <div class="product-price"><span class="p-new">899 TL</span><span class="p-old">1.299 TL</span></div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-img">
+            <div class="product-badges"><span class="p-badge hot">COK SATAN</span></div>
+            <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=85" alt="Sneaker" />
+            <button class="quick-add" data-add="Premium Sneaker" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=120&q=85"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Sepete Ekle</button>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Ayakkabi</div>
+            <h3 class="product-name">Sport Sneaker</h3>
+            <div class="product-rating"><span class="star">&#9733;</span> 4.9 <span>(512)</span></div>
+            <div class="product-price"><span class="p-new">1.499 TL</span><span class="p-old">1.999 TL</span></div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-img">
+            <div class="product-badges"><span class="p-badge new">YENI</span></div>
+            <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=85" alt="Akilli Saat" />
+            <button class="quick-add" data-add="Akilli Saat Pro" data-img="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=120&q=85"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Sepete Ekle</button>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Teknoloji</div>
+            <h3 class="product-name">Akilli Saat Pro</h3>
+            <div class="product-rating"><span class="star">&#9733;</span> 4.9 <span>(467)</span></div>
+            <div class="product-price"><span class="p-new">3.499 TL</span><span class="p-old">4.299 TL</span></div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-img">
+            <div class="product-badges"><span class="p-badge sale">-25%</span></div>
+            <button class="wishlist-btn" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button>
+            <img src="https://images.unsplash.com/photo-1491557963955-7a2c5fb15e96?w=600&q=85" alt="Gozluk" />
+            <button class="quick-add" data-add="Polarize Gozluk" data-img="https://images.unsplash.com/photo-1491557963955-7a2c5fb15e96?w=120&q=85"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Sepete Ekle</button>
+          </div>
+          <div class="product-info">
+            <div class="product-cat">Aksesuar</div>
+            <h3 class="product-name">Modern Gozluk</h3>
+            <div class="product-rating"><span class="star">&#9733;</span> 4.8 <span>(305)</span></div>
+            <div class="product-price"><span class="p-new">749 TL</span><span class="p-old">999 TL</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brands -->
+<section class="brands" id="markalar">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-bottom: 40px;">
+      <div>
+        <div class="section-eyebrow">Is Ortaklarimiz</div>
+        <h2 class="section-title">Calistigimiz <span class="grad">Markalar</span></h2>
+      </div>
+    </div>
+    <div class="brands-grid reveal-stagger">
+      <div class="brand-box"><span class="dot-grad"></span>AURUM</div>
+      <div class="brand-box"><span class="dot-grad"></span>VOLT</div>
+      <div class="brand-box"><span class="dot-grad"></span>NOIR</div>
+      <div class="brand-box"><span class="dot-grad"></span>KAIROS</div>
+      <div class="brand-box"><span class="dot-grad"></span>PULSE</div>
+      <div class="brand-box"><span class="dot-grad"></span>ATLAS</div>
+      <div class="brand-box"><span class="dot-grad"></span>ECHO</div>
+      <div class="brand-box"><span class="dot-grad"></span>NORTH</div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div>
+        <div class="section-eyebrow">Avantajlar</div>
+        <h2 class="section-title">Neden <span class="grad">Bizi</span> Secmelisiniz?</h2>
+        <p class="section-sub">Sizin memnuniyetiniz bizim onceligimiz. En iyi alisveris deneyimini sunmak icin calisiyoruz.</p>
+      </div>
+    </div>
+    <div class="features-grid reveal-stagger">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16h6v6h-6zM2 16h6v6H2zM9 2h6v6H9z"></path><path d="M5 22V12M19 22V12M12 22V8"></path></svg>
+        </div>
+        <h3 class="feature-title">Hizli Kargo</h3>
+        <p class="feature-desc">750 TL uzeri ucretsiz kargo. Ayni gun teslimat secenekleriyle kapiniza kadar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+        </div>
+        <h3 class="feature-title">Guvenli Odeme</h3>
+        <p class="feature-desc">256-bit SSL sifreleme ile tum odemeleriniz tamamen guvende. 3D Secure destegi.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+        </div>
+        <h3 class="feature-title">Kolay Iade</h3>
+        <p class="feature-desc">14 gun icinde ucretsiz iade garantisi. Sebep gostermenden geri gonderebilirsin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <h3 class="feature-title">7/24 Destek</h3>
+        <p class="feature-desc">Her an yaninizdayiz. Canli destek, telefon ve e-posta ile hizli cozumler.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="yorumlar">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div>
+        <div class="section-eyebrow">Musteri Yorumlari</div>
+        <h2 class="section-title">Musterilerimiz <span class="grad">Ne Diyor?</span></h2>
+        <p class="section-sub">Binlerce mutlu musterimizin deneyimlerini okuyun.</p>
+      </div>
+    </div>
+    <div class="test-grid reveal-stagger">
+      <div class="test-card">
+        <div class="test-quote">&ldquo;</div>
+        <p class="test-text">SHOPLY'dan alisveris yapmak harika bir deneyim. Urun kalitesi muhtesem, kargo inanilmaz hizli geldi. Kesinlikle tavsiye ederim.</p>
+        <div class="test-author">
+          <div class="test-avatar">EY</div>
+          <div class="test-info">
+            <div class="test-name">Elif Yilmaz</div>
+            <div class="test-role">Istanbul &middot; Sadik Musteri</div>
+            <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">&ldquo;</div>
+        <p class="test-text">Fiyat performans acisindan rakipsiz. Ayni urunu baska magazalardan iki kati fiyata aliyordum. Artik tum alisverislerimi buradan yapiyorum.</p>
+        <div class="test-author">
+          <div class="test-avatar">MK</div>
+          <div class="test-info">
+            <div class="test-name">Mert Kaya</div>
+            <div class="test-role">Ankara &middot; Premium Uye</div>
+            <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-quote">&ldquo;</div>
+        <p class="test-text">Musteri hizmetleri gercekten 7/24. Gece yarisi bile soruma cevap verdiler. Iade surecim problemsiz tamamlandi. Cok memnunum.</p>
+        <div class="test-author">
+          <div class="test-avatar">SA</div>
+          <div class="test-info">
+            <div class="test-name">Selin Aydin</div>
+            <div class="test-role">Izmir &middot; Yeni Musteri</div>
+            <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-card reveal">
+      <div class="newsletter-content">
+        <h2>Firsatlari <span class="grad">Kacirma</span></h2>
+        <p>En yeni urunler ve ozel kampanyalardan ilk sen haberdar ol. Bultenimize abone ol, ekstra %10 indirim kazan.</p>
+        <form class="news-form" id="newsForm" onsubmit="return false;">
+          <input type="email" placeholder="E-posta adresiniz" required />
+          <button type="submit">Abone Ol</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="iletisim">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#" class="logo">SHOPLY<span class="plus">+</span></a>
+        <p>Modern, enerjik ve ozel urunleriyle SHOPLY, alisveris deneyiminizi yeniden tanimliyor. 2026'da da yaninizdayiz.</p>
+        <div class="socials">
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.55a8.16 8.16 0 0 0 4.77 1.52V6.62a4.85 4.85 0 0 1-1.84-.4z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Magaza</h4>
+        <ul>
+          <li><a href="#">Yeni Gelenler</a></li>
+          <li><a href="#">Cok Satanlar</a></li>
+          <li><a href="#">Indirimli Urunler</a></li>
+          <li><a href="#">Hediye Onerileri</a></li>
+          <li><a href="#">Son Bakilanlar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Destek</h4>
+        <ul>
+          <li><a href="#">Yardim Merkezi</a></li>
+          <li><a href="#">Sikca Sorulan Sorular</a></li>
+          <li><a href="#">Iade ve Degisim</a></li>
+          <li><a href="#">Kargo Takip</a></li>
+          <li><a href="#">Siparis Durumu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Iletisim</h4>
+        <ul>
+          <li><a href="#">info@shoply.com</a></li>
+          <li><a href="#">+90 212 555 0123</a></li>
+          <li><a href="#">Istanbul, Turkiye</a></li>
+          <li><a href="#">Pzt-Cmt 09:00-20:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copy">&copy; 2026 SHOPLY. Tum haklari saklidir. &middot; Gizlilik &middot; Kullanim Kosullari &middot; Cerez Politikasi</div>
+      <div class="pay-methods" aria-label="Odeme yontemleri">
+        <span class="pay-icon" aria-label="Visa">
+          <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="3" fill="#1A1F71"/><path d="M16.4 16.2h-2.6l1.6-9.9h2.6l-1.6 9.9zm11.1-9.7c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.3 2.6 1 .5 1.4.8 1.4 1.2 0 .7-.8 1-1.6 1-1 0-1.6-.2-2.5-.5l-.4-.2-.4 2.2c.6.3 1.8.5 3 .5 2.7 0 4.5-1.3 4.5-3.3 0-1.1-.7-1.9-2.2-2.6-.9-.4-1.5-.7-1.5-1.1 0-.4.5-.8 1.4-.8.8 0 1.4.2 1.9.4l.2.1.5-2.3zM30 6.3h-2c-.6 0-1.1.2-1.4.8L23 16.2h2.8s.5-1.2.6-1.5h3.4c.1.3.3 1.5.3 1.5h2.5L30 6.3zm-2.9 6.3c.2-.5 1-2.6 1-2.6s.2-.5.3-.8l.2.7s.5 2.3.6 2.6h-2.1zM12.6 6.3L10 13.5l-.3-1.4c-.5-1.6-2-3.4-3.7-4.3l2.4 8.3h2.8l4.3-9.8h-2.9z" fill="#fff"/><path d="M9.7 6.3H5.4l0 .2c3.3.8 5.5 2.7 6.4 5L10.8 7c-.2-.5-.6-.7-1.1-.7z" fill="#F9A533"/></svg>
+        </span>
+        <span class="pay-icon" aria-label="Mastercard">
+          <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="3" fill="#fff"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 7.2c1.6 1.2 2.6 3.1 2.6 5.3s-1 4.1-2.6 5.3c-1.6-1.2-2.6-3.1-2.6-5.3s1-4.1 2.6-5.3z" fill="#FF5F00"/></svg>
+        </span>
+        <span class="pay-icon" aria-label="Troy">
+          <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="3" fill="#0E2A6B"/><text x="19" y="16" font-family="Arial, sans-serif" font-size="9" font-weight="800" fill="#fff" text-anchor="middle" letter-spacing="0.5">TROY</text><circle cx="6" cy="20" r="2" fill="#E31E2A"/><circle cx="32" cy="4" r="2" fill="#E31E2A"/></svg>
+        </span>
+        <span class="pay-icon" aria-label="American Express">
+          <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="24" rx="3" fill="#016FD0"/><text x="19" y="15" font-family="Arial, sans-serif" font-size="6" font-weight="800" fill="#fff" text-anchor="middle" letter-spacing="0.3">AMEX</text></svg>
+        </span>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+  <span id="toastMsg">Urun sepete eklendi</span>
+</div>
+
+<script>
+  // ============== NAV SCROLL ==============
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ============== MOBILE MENU ==============
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // ============== SEARCH ==============
+  const searchToggle = document.getElementById('searchToggle');
+  const searchBox = document.getElementById('searchBox');
+  const searchInput = document.getElementById('searchInput');
+  searchToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    searchBox.classList.toggle('open');
+    if (searchBox.classList.contains('open')) {
+      setTimeout(() => searchInput.focus(), 200);
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!searchBox.contains(e.target)) searchBox.classList.remove('open');
+  });
+
+  // ============== COUNTDOWN ==============
+  const cdD = document.getElementById('cd-d');
+  const cdH = document.getElementById('cd-h');
+  const cdM = document.getElementById('cd-m');
+  const cdS = document.getElementById('cd-s');
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 6);
+  targetDate.setHours(23, 59, 59, 0);
+  const updateCountdown = () => {
+    const now = new Date();
+    let diff = Math.max(0, targetDate - now);
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000); diff -= h * 3600000;
+    const m = Math.floor(diff / 60000); diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    const pad = n => String(n).padStart(2, '0');
+    cdD.textContent = pad(d);
+    cdH.textContent = pad(h);
+    cdM.textContent = pad(m);
+    cdS.textContent = pad(s);
+  };
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ============== CART & ADD TO CART ==============
+  let cartCount = 0;
+  const cartCountEl = document.getElementById('cartCount');
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  let toastTimer = null;
+  const showToast = (msg) => {
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+  };
+  const flyToCart = (e, imgUrl) => {
+    const cart = document.getElementById('cartBtn');
+    const cartRect = cart.getBoundingClientRect();
+    const startRect = e.currentTarget.getBoundingClientRect();
+    const fly = document.createElement('div');
+    fly.className = 'fly-item';
+    fly.innerHTML = '<img src="' + imgUrl + '" alt="" />';
+    fly.style.left = (startRect.left + startRect.width/2 - 30) + 'px';
+    fly.style.top = (startRect.top + startRect.height/2 - 30) + 'px';
+    document.body.appendChild(fly);
+    requestAnimationFrame(() => {
+      fly.style.left = (cartRect.left + cartRect.width/2 - 30) + 'px';
+      fly.style.top = (cartRect.top + cartRect.height/2 - 30) + 'px';
+      fly.style.transform = 'scale(0.3)';
+      fly.style.opacity = '0.4';
+    });
+    setTimeout(() => fly.remove(), 1000);
+  };
+  document.querySelectorAll('[data-add]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const name = btn.dataset.add;
+      const img = btn.dataset.img;
+      cartCount++;
+      cartCountEl.textContent = cartCount;
+      cartCountEl.style.transform = 'scale(1.4)';
+      setTimeout(() => cartCountEl.style.transform = '', 250);
+      flyToCart(e, img);
+      showToast('"' + name + '" sepete eklendi');
+    });
+  });
+
+  // ============== WISHLIST ==============
+  document.querySelectorAll('.wishlist-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      btn.classList.toggle('active');
+    });
+  });
+
+  // ============== FILTER ==============
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const productCards = document.querySelectorAll('#productGrid .product-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.textContent.trim().toLowerCase();
+      productCards.forEach(card => {
+        const cat = (card.dataset.cat || '').toLowerCase();
+        const tr = f === 'tumu' || f === 'tümü';
+        const match = tr ||
+          (f === 'aksesuar' && cat === 'aksesuar') ||
+          (f === 'ayakkabi' && cat === 'ayakkabi') ||
+          (f === 'ayakkabı' && cat === 'ayakkabi') ||
+          (f === 'canta' && cat === 'canta') ||
+          (f === 'çanta' && cat === 'canta') ||
+          (f === 'teknoloji' && cat === 'teknoloji') ||
+          (f === 'giyim' && cat === 'giyim');
+        if (match) {
+          card.style.display = '';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 20);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => { card.style.display = 'none'; }, 300);
+        }
+      });
+    });
+  });
+
+  // ============== CAROUSEL ==============
+  const carousel = document.getElementById('carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const scrollAmount = 320;
+  prevBtn.addEventListener('click', () => { carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); });
+  nextBtn.addEventListener('click', () => { carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }); });
+
+  // ============== REVEAL ON SCROLL ==============
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => io.observe(el));
+
+  // ============== NEWSLETTER ==============
+  document.getElementById('newsForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = e.target.querySelector('input');
+    if (input.value && input.value.includes('@')) {
+      showToast('Bultenimize basariyla abone oldunuz');
+      input.value = '';
+    }
+  });
+
+  // ============== INITIAL HERO REVEAL ==============
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero .hero-content, .hero .hero-card-wrap').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.9s ease ' + (i * 0.15) + 's, transform 0.9s cubic-bezier(0.4,0,0.2,1) ' + (i * 0.15) + 's';
+      setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 100);
+    });
+  });
+</script>
+
 </body>
 </html>
